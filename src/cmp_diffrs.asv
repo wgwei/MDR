@@ -1,0 +1,17 @@
+% compare theory and simplified diffraction function
+clc;close all;clear all;
+
+rs = 10;
+rr = 10;
+spos = [-10*sin(pi/3), -10*sin(pi/6)];
+rpos = [10 0];
+edgepos = [0 0];
+nupi = 11/6*pi;
+thetas = pi/6;
+Theta = 0:0.1:5*pi/3;
+for t=1:length(Theta)
+    theta = Theta(t);
+    [vpDiff, vpDirect] = single_wedge_level(nupi, spos, rpos, edgepos, theta, thetas, 1);
+end
+
+plot(vpDiff)
